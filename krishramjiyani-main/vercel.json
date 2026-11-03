@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.krishramjiyani.in" }],
+      "destination": "https://krishramjiyani.in/$1",
+      "permanent": true
+    }
+  ]
+}

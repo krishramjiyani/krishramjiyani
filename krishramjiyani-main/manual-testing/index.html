@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual &amp; Functional Testing | Krish Ramjiyani, QA Engineer</title>
+<meta name="description" content="How Krish Ramjiyani approaches manual, functional, regression and end-to-end testing, with sample test cases and a defect report from FinTech, gaming and ERP work.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1A2140">
+<meta name="author" content="Krish Ramjiyani">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://krishramjiyani.in/manual-testing/">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Krish Ramjiyani">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://krishramjiyani.in/manual-testing/">
+<meta property="og:title" content="Manual &amp; Functional Testing | Krish Ramjiyani, QA Engineer">
+<meta property="og:description" content="How Krish Ramjiyani approaches manual, functional, regression and end-to-end testing, with sample test cases and a defect report from FinTech, gaming and ERP work.">
+<meta property="og:image" content="https://krishramjiyani.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Krish Ramjiyani, QA Engineer – I find what breaks before your users do.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Manual &amp; Functional Testing | Krish Ramjiyani, QA Engineer">
+<meta name="twitter:description" content="How Krish Ramjiyani approaches manual, functional, regression and end-to-end testing, with sample test cases and a defect report from FinTech, gaming and ERP work.">
+<meta name="twitter:image" content="https://krishramjiyani.in/og-image.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://krishramjiyani.in/manual-testing/#webpage",
+   "url": "https://krishramjiyani.in/manual-testing/",
+   "name": "Manual & Functional Testing | Krish Ramjiyani, QA Engineer",
+   "description": "How Krish Ramjiyani approaches manual, functional, regression and end-to-end testing, with sample test cases and a defect report from FinTech, gaming and ERP work.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://krishramjiyani.in/#website"
+   },
+   "about": {
+    "@id": "https://krishramjiyani.in/#person"
+   },
+   "author": {
+    "@id": "https://krishramjiyani.in/#person"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://krishramjiyani.in/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Manual Testing",
+     "item": "https://krishramjiyani.in/manual-testing/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#E3E6DC;--card:#F7F7F1;--ink:#1A2140;--blue:#2D4BF0;--marker:#F4D84A;--soft:#C9CEC0;--codebg:#1A2140;--codefg:#E3E6DC;--display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--body:'Newsreader',Georgia,'Times New Roman',serif}
+[data-theme=dark]{color-scheme:dark;--paper:#12172B;--ink:#E6E9DF;--soft:#2D3556;--card:#1C2340;--codebg:#0A0E1F;--blue:#7C92FF}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.15rem;line-height:1.65}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:860px;margin:0 auto;padding:0 clamp(1.2rem,4vw,2rem)}
+h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.03em}
+nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem 1.4rem;padding:1rem 0;font-family:var(--display);font-weight:700}
+nav ul{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;list-style:none;font-weight:400;font-size:1rem}
+nav a{text-decoration:none}nav a:hover,nav a[aria-current]{text-decoration:underline;text-underline-offset:4px}
+h1{font-size:clamp(2.2rem,6vw,3.6rem);margin:2.4rem 0 1rem}
+h1 mark,.lead b{background:linear-gradient(var(--marker),var(--marker)) 0 88%/100% .5em no-repeat;color:inherit;font-weight:inherit}
+[data-theme=dark] h1 mark,[data-theme=dark] .lead b{background-image:linear-gradient(#3B4A9E,#3B4A9E)}
+.lead{font-size:1.3rem;margin-bottom:1.5rem}
+h2{font-size:clamp(1.5rem,3.6vw,2rem);margin:2.6rem 0 .8rem}
+h3{font-size:1.2rem;margin:1.4rem 0 .4rem}
+p{margin:.7rem 0}
+ul.t,ol.t{margin:.6rem 0 .6rem 1.3rem}ul.t li,ol.t li{margin:.3rem 0}
+.card{background:var(--card);border:2px solid var(--ink);box-shadow:3px 4px 0 var(--ink);padding:1.1rem 1.3rem;margin:1.2rem 0}
+.card h3{margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.grid .card{margin:0}
+.num{font-family:var(--display);font-weight:800;font-size:2rem;letter-spacing:-.03em}
+.tbl{overflow-x:auto;margin:1rem 0}
+table{border-collapse:collapse;width:100%;font-size:1rem;min-width:520px}
+th,td{border-bottom:1px solid var(--soft);padding:.5rem .6rem;text-align:left;vertical-align:top}
+th{font-family:var(--display);font-size:.9rem}
+pre{background:var(--codebg);color:var(--codefg);padding:1rem 1.2rem;overflow-x:auto;font-size:.95rem;line-height:1.5;margin:1rem 0}
+.note{font-size:.95rem;opacity:.75}
+.cta{margin:3rem 0 1rem;padding:1.4rem;border:2px solid var(--ink);background:var(--card)}
+.cta a.btn{display:inline-block;margin:.4rem .6rem 0 0;padding:.5rem 1rem;border:2px solid var(--ink);font-family:var(--display);font-weight:700;text-decoration:none}
+.cta a.btn:hover{background:var(--marker);color:#1A2140}
+.rel{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;margin:1rem 0}
+footer{padding:2rem 0 3rem;font-size:.95rem;opacity:.7}
+</style>
+<script>(function(){var t=null;try{t=localStorage.getItem('theme')}catch(e){}if(!t)t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';document.documentElement.setAttribute('data-theme',t)})();</script>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Main"><a href="/">Krish Ramjiyani</a><ul><li><a href="/">Home</a></li><li><a href="/qa-engineer/">QA Engineer</a></li><li><a href="/manual-testing/" aria-current="page">Manual Testing</a></li><li><a href="/api-testing/">API Testing</a></li><li><a href="/playwright-automation/">Playwright Automation</a></li></ul></nav>
+<main>
+<h1>Manual, functional and <mark>regression testing</mark></h1>
+<p class="lead">Manual testing is where I learn how a product really behaves: who uses it, what the rules are and where it can go wrong. Here is how I work and what it looks like on the page.</p>
+<h2>The types of testing I run</h2>
+<ul class="t">
+<li><b>Functional testing</b> against business requirements and acceptance criteria.</li>
+<li><b>Regression and smoke testing</b> in every release cycle.</li>
+<li><b>End-to-end testing</b> across roles, workflows and business logic, including calculations.</li>
+<li><b>UI and post-release testing</b>, across browsers and devices.</li>
+<li><b>Role-based access testing</b> in systems with several user levels.</li>
+</ul>
+<h2>My process</h2>
+<ol class="t">
+<li>Read the requirements like a skeptic. Challenge assumptions and list the risks.</li>
+<li>Design test cases from the business requirements and acceptance criteria.</li>
+<li>Explore real user scenarios across roles and workflows.</li>
+<li>Log defects in JIRA with clear steps, expected and actual results, and evidence.</li>
+<li>Retest fixes, run regression, and close the defect.</li>
+</ol>
+<h2>Where I’ve used it</h2>
+<div class="card"><h3>AgroPack ERP: 3,500+ test cases, 350+ defects</h3><p>A manufacturing and quality control system for agrochemicals. I tested workflows across 7 enterprise roles: sample management, batch creation, laboratory testing, chemical inventory, production approval, COA workflows and packaging plant controls.</p></div>
+<div class="card"><h3>Vegas Empire: 2,160+ test cases, 260+ defects</h3><p>On the admin portal I tested user management, game CRUD, game coins, RTP, bonus features, recharge and redeem, support tickets and chat under a multi-level role hierarchy. On the player site I played through 100+ slot games, checking gameplay and functionality as a real player would.</p></div>
+<h2>Sample test cases: role-based access</h2>
+<p>An illustrative set that shows how I write scenarios and set priority. It uses no client data.</p>
+<div class="tbl"><table>
+<thead><tr><th>ID</th><th>Scenario</th><th>Expected result</th><th>Priority</th></tr></thead>
+<tbody>
+<tr><td>RBAC-02</td><td>Agent opens the Super Admin URL directly</td><td>Access is denied and the user is redirected</td><td>High</td></tr>
+<tr><td>RBAC-03</td><td>Agent views the user list</td><td>Only their own downline is shown</td><td>High</td></tr>
+<tr><td>RBAC-04</td><td>Agent creates a user under another agent</td><td>Action is blocked with a clear message</td><td>High</td></tr>
+<tr><td>RBAC-06</td><td>Role is changed while the user is logged in</td><td>New permissions apply after refresh or next login</td><td>Medium</td></tr>
+<tr><td>RBAC-07</td><td>Disabled user tries to log in</td><td>Login fails with a clear message</td><td>Medium</td></tr>
+</tbody></table></div>
+<h2>Sample defect report</h2>
+<div class="card"><h3>Withdrawal is created twice when Submit is double-clicked</h3>
+<p><b>Severity:</b> Critical. <b>Priority:</b> High. <b>Environment:</b> QA, Chrome on Windows. <b>Role:</b> Player.</p>
+<p><b>Steps:</b> log in as a player with a balance of 100, open Withdraw, enter 50, double-click Submit quickly.</p>
+<p><b>Expected:</b> one withdrawal of 50 is created and the button locks after the first click.</p>
+<p><b>Actual:</b> two withdrawal requests appear in history and the balance drops by 100.</p>
+<p><b>Evidence:</b> a screen recording and the duplicate API calls from the network tab.</p>
+<p><b>Suggested fix:</b> disable the button on first click and make the endpoint reject duplicate requests.</p></div>
+<p>Once a flow is stable I automate the core of it. See <a href="/playwright-automation/">Playwright automation</a>, and for checks beyond the UI, <a href="/api-testing/">API testing</a>.</p>
+<h2>More from my portfolio</h2>
+<div class="rel"><a href="/">Portfolio home</a><a href="/qa-engineer/">QA Engineer</a><a href="/api-testing/">API Testing</a><a href="/playwright-automation/">Playwright Automation</a></div>
+<div class="cta"><h2 style="margin-top:0">Have something that needs breaking?</h2>
+<p>I’m open to remote QA roles.</p>
+<a class="btn" href="mailto:krishramjiyani906@gmail.com">Email me</a><a class="btn" href="https://www.linkedin.com/in/krishramjiyani" rel="noopener">LinkedIn</a><a class="btn" href="/Krish_Ramjiyani_Resume.pdf" title="Krish Ramjiyani – QA Engineer resume (PDF)">Resume (PDF)</a></div>
+</main>
+<footer>© 2026 Krish Ramjiyani. Tested by the author.</footer>
+</div>
+</body>
+</html>

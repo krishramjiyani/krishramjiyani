@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>API Testing with Postman | Krish Ramjiyani, QA Engineer</title>
+<meta name="description" content="Krish Ramjiyani tests REST APIs and integrations in Postman and runs JMeter load tests, from payment gateways to role-based access.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1A2140">
+<meta name="author" content="Krish Ramjiyani">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://krishramjiyani.in/api-testing/">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Krish Ramjiyani">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://krishramjiyani.in/api-testing/">
+<meta property="og:title" content="API Testing with Postman | Krish Ramjiyani, QA Engineer">
+<meta property="og:description" content="Krish Ramjiyani tests REST APIs and integrations in Postman and runs JMeter load tests, from payment gateways to role-based access.">
+<meta property="og:image" content="https://krishramjiyani.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Krish Ramjiyani, QA Engineer – I find what breaks before your users do.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="API Testing with Postman | Krish Ramjiyani, QA Engineer">
+<meta name="twitter:description" content="Krish Ramjiyani tests REST APIs and integrations in Postman and runs JMeter load tests, from payment gateways to role-based access.">
+<meta name="twitter:image" content="https://krishramjiyani.in/og-image.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://krishramjiyani.in/api-testing/#webpage",
+   "url": "https://krishramjiyani.in/api-testing/",
+   "name": "API Testing with Postman | Krish Ramjiyani, QA Engineer",
+   "description": "Krish Ramjiyani tests REST APIs and integrations in Postman and runs JMeter load tests, from payment gateways to role-based access.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://krishramjiyani.in/#website"
+   },
+   "about": {
+    "@id": "https://krishramjiyani.in/#person"
+   },
+   "author": {
+    "@id": "https://krishramjiyani.in/#person"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://krishramjiyani.in/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "API Testing",
+     "item": "https://krishramjiyani.in/api-testing/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#E3E6DC;--card:#F7F7F1;--ink:#1A2140;--blue:#2D4BF0;--marker:#F4D84A;--soft:#C9CEC0;--codebg:#1A2140;--codefg:#E3E6DC;--display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--body:'Newsreader',Georgia,'Times New Roman',serif}
+[data-theme=dark]{color-scheme:dark;--paper:#12172B;--ink:#E6E9DF;--soft:#2D3556;--card:#1C2340;--codebg:#0A0E1F;--blue:#7C92FF}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.15rem;line-height:1.65}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:860px;margin:0 auto;padding:0 clamp(1.2rem,4vw,2rem)}
+h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.03em}
+nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem 1.4rem;padding:1rem 0;font-family:var(--display);font-weight:700}
+nav ul{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;list-style:none;font-weight:400;font-size:1rem}
+nav a{text-decoration:none}nav a:hover,nav a[aria-current]{text-decoration:underline;text-underline-offset:4px}
+h1{font-size:clamp(2.2rem,6vw,3.6rem);margin:2.4rem 0 1rem}
+h1 mark,.lead b{background:linear-gradient(var(--marker),var(--marker)) 0 88%/100% .5em no-repeat;color:inherit;font-weight:inherit}
+[data-theme=dark] h1 mark,[data-theme=dark] .lead b{background-image:linear-gradient(#3B4A9E,#3B4A9E)}
+.lead{font-size:1.3rem;margin-bottom:1.5rem}
+h2{font-size:clamp(1.5rem,3.6vw,2rem);margin:2.6rem 0 .8rem}
+h3{font-size:1.2rem;margin:1.4rem 0 .4rem}
+p{margin:.7rem 0}
+ul.t,ol.t{margin:.6rem 0 .6rem 1.3rem}ul.t li,ol.t li{margin:.3rem 0}
+.card{background:var(--card);border:2px solid var(--ink);box-shadow:3px 4px 0 var(--ink);padding:1.1rem 1.3rem;margin:1.2rem 0}
+.card h3{margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.grid .card{margin:0}
+.num{font-family:var(--display);font-weight:800;font-size:2rem;letter-spacing:-.03em}
+.tbl{overflow-x:auto;margin:1rem 0}
+table{border-collapse:collapse;width:100%;font-size:1rem;min-width:520px}
+th,td{border-bottom:1px solid var(--soft);padding:.5rem .6rem;text-align:left;vertical-align:top}
+th{font-family:var(--display);font-size:.9rem}
+pre{background:var(--codebg);color:var(--codefg);padding:1rem 1.2rem;overflow-x:auto;font-size:.95rem;line-height:1.5;margin:1rem 0}
+.note{font-size:.95rem;opacity:.75}
+.cta{margin:3rem 0 1rem;padding:1.4rem;border:2px solid var(--ink);background:var(--card)}
+.cta a.btn{display:inline-block;margin:.4rem .6rem 0 0;padding:.5rem 1rem;border:2px solid var(--ink);font-family:var(--display);font-weight:700;text-decoration:none}
+.cta a.btn:hover{background:var(--marker);color:#1A2140}
+.rel{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;margin:1rem 0}
+footer{padding:2rem 0 3rem;font-size:.95rem;opacity:.7}
+</style>
+<script>(function(){var t=null;try{t=localStorage.getItem('theme')}catch(e){}if(!t)t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';document.documentElement.setAttribute('data-theme',t)})();</script>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Main"><a href="/">Krish Ramjiyani</a><ul><li><a href="/">Home</a></li><li><a href="/qa-engineer/">QA Engineer</a></li><li><a href="/manual-testing/">Manual Testing</a></li><li><a href="/api-testing/" aria-current="page">API Testing</a></li><li><a href="/playwright-automation/">Playwright Automation</a></li></ul></nav>
+<main>
+<h1>API testing with <mark>Postman</mark> and JMeter</h1>
+<p class="lead">The screen only shows part of the story. I check the API and the data behind it, to confirm that what users see matches what the system actually does.</p>
+<h2>What I check</h2>
+<ul class="t">
+<li>REST API responses and integrations, using Postman.</li>
+<li>Data integrity, comparing what is shown on screen with what the API returns and what is stored in the database (I use SQL for database checks).</li>
+<li>Application performance under load, using Apache JMeter.</li>
+<li>Access rules at the API level, not only in the interface.</li>
+</ul>
+<h2>Where it matters most: payments</h2>
+<p>On Getways, a payment and gaming transaction platform, I validated integrations with WERT, Stripe, Coinbase, Fiserv, CLKK and PayNearMe across Player, Agent, Master Agent and Super Admin journeys. That work produced 1,642+ test cases and 420+ defects.</p>
+<h3>How I test a payment flow</h3>
+<ol class="t">
+<li>Read the rules first: limits, fees, currencies and who is allowed to pay.</li>
+<li>Test the happy path with each payment method.</li>
+<li>Break it: declined cards, timeouts, double clicks, refreshing mid-payment, closing the tab.</li>
+<li>Check the numbers: amount, fee and balance must match on screen, in the API and in the database.</li>
+<li>Check every role sees only what it should.</li>
+<li>Automate the stable core, then re-run it after every release.</li>
+</ol>
+<h2>Example: a duplicate request found through the network tab</h2>
+<p>In an illustrative defect report, double-clicking Submit on a withdrawal created two requests and took 100 from a balance of 100 instead of 50. The evidence was a screen recording plus the duplicate API calls in the network tab. The suggested fix was to lock the button on the first click and make the endpoint reject duplicates. The full report is on my <a href="/manual-testing/">manual testing</a> page.</p>
+<h2>Example: access control at the API</h2>
+<p>A sample scenario from my role-based access test cases: a player calls an admin API with a valid player token, and the server should return 403 with no data. A hidden menu item is not enough. The server has to refuse the request.</p>
+<h2>Load testing</h2>
+<p>I run load tests in Apache JMeter to see how an application performs beyond what one tester clicking through the UI can show.</p>
+<p>For the UI side of the same flows, see <a href="/playwright-automation/">Playwright automation</a>.</p>
+<h2>More from my portfolio</h2>
+<div class="rel"><a href="/">Portfolio home</a><a href="/qa-engineer/">QA Engineer</a><a href="/manual-testing/">Manual Testing</a><a href="/playwright-automation/">Playwright Automation</a></div>
+<div class="cta"><h2 style="margin-top:0">Have something that needs breaking?</h2>
+<p>I’m open to remote QA roles.</p>
+<a class="btn" href="mailto:krishramjiyani906@gmail.com">Email me</a><a class="btn" href="https://www.linkedin.com/in/krishramjiyani" rel="noopener">LinkedIn</a><a class="btn" href="/Krish_Ramjiyani_Resume.pdf" title="Krish Ramjiyani – QA Engineer resume (PDF)">Resume (PDF)</a></div>
+</main>
+<footer>© 2026 Krish Ramjiyani. Tested by the author.</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playwright Automation with JavaScript | Krish Ramjiyani, QA Engineer</title>
+<meta name="description" content="Krish Ramjiyani builds reusable Playwright tests in JavaScript to make regression testing faster and more reliable. Read the approach and a sample test.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1A2140">
+<meta name="author" content="Krish Ramjiyani">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://krishramjiyani.in/playwright-automation/">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Krish Ramjiyani">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://krishramjiyani.in/playwright-automation/">
+<meta property="og:title" content="Playwright Automation with JavaScript | Krish Ramjiyani, QA Engineer">
+<meta property="og:description" content="Krish Ramjiyani builds reusable Playwright tests in JavaScript to make regression testing faster and more reliable. Read the approach and a sample test.">
+<meta property="og:image" content="https://krishramjiyani.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Krish Ramjiyani, QA Engineer – I find what breaks before your users do.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Playwright Automation with JavaScript | Krish Ramjiyani, QA Engineer">
+<meta name="twitter:description" content="Krish Ramjiyani builds reusable Playwright tests in JavaScript to make regression testing faster and more reliable. Read the approach and a sample test.">
+<meta name="twitter:image" content="https://krishramjiyani.in/og-image.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://krishramjiyani.in/playwright-automation/#webpage",
+   "url": "https://krishramjiyani.in/playwright-automation/",
+   "name": "Playwright Automation with JavaScript | Krish Ramjiyani, QA Engineer",
+   "description": "Krish Ramjiyani builds reusable Playwright tests in JavaScript to make regression testing faster and more reliable. Read the approach and a sample test.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://krishramjiyani.in/#website"
+   },
+   "about": {
+    "@id": "https://krishramjiyani.in/#person"
+   },
+   "author": {
+    "@id": "https://krishramjiyani.in/#person"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://krishramjiyani.in/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Playwright Automation",
+     "item": "https://krishramjiyani.in/playwright-automation/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#E3E6DC;--card:#F7F7F1;--ink:#1A2140;--blue:#2D4BF0;--marker:#F4D84A;--soft:#C9CEC0;--codebg:#1A2140;--codefg:#E3E6DC;--display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--body:'Newsreader',Georgia,'Times New Roman',serif}
+[data-theme=dark]{color-scheme:dark;--paper:#12172B;--ink:#E6E9DF;--soft:#2D3556;--card:#1C2340;--codebg:#0A0E1F;--blue:#7C92FF}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.15rem;line-height:1.65}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:860px;margin:0 auto;padding:0 clamp(1.2rem,4vw,2rem)}
+h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.03em}
+nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem 1.4rem;padding:1rem 0;font-family:var(--display);font-weight:700}
+nav ul{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;list-style:none;font-weight:400;font-size:1rem}
+nav a{text-decoration:none}nav a:hover,nav a[aria-current]{text-decoration:underline;text-underline-offset:4px}
+h1{font-size:clamp(2.2rem,6vw,3.6rem);margin:2.4rem 0 1rem}
+h1 mark,.lead b{background:linear-gradient(var(--marker),var(--marker)) 0 88%/100% .5em no-repeat;color:inherit;font-weight:inherit}
+[data-theme=dark] h1 mark,[data-theme=dark] .lead b{background-image:linear-gradient(#3B4A9E,#3B4A9E)}
+.lead{font-size:1.3rem;margin-bottom:1.5rem}
+h2{font-size:clamp(1.5rem,3.6vw,2rem);margin:2.6rem 0 .8rem}
+h3{font-size:1.2rem;margin:1.4rem 0 .4rem}
+p{margin:.7rem 0}
+ul.t,ol.t{margin:.6rem 0 .6rem 1.3rem}ul.t li,ol.t li{margin:.3rem 0}
+.card{background:var(--card);border:2px solid var(--ink);box-shadow:3px 4px 0 var(--ink);padding:1.1rem 1.3rem;margin:1.2rem 0}
+.card h3{margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.grid .card{margin:0}
+.num{font-family:var(--display);font-weight:800;font-size:2rem;letter-spacing:-.03em}
+.tbl{overflow-x:auto;margin:1rem 0}
+table{border-collapse:collapse;width:100%;font-size:1rem;min-width:520px}
+th,td{border-bottom:1px solid var(--soft);padding:.5rem .6rem;text-align:left;vertical-align:top}
+th{font-family:var(--display);font-size:.9rem}
+pre{background:var(--codebg);color:var(--codefg);padding:1rem 1.2rem;overflow-x:auto;font-size:.95rem;line-height:1.5;margin:1rem 0}
+.note{font-size:.95rem;opacity:.75}
+.cta{margin:3rem 0 1rem;padding:1.4rem;border:2px solid var(--ink);background:var(--card)}
+.cta a.btn{display:inline-block;margin:.4rem .6rem 0 0;padding:.5rem 1rem;border:2px solid var(--ink);font-family:var(--display);font-weight:700;text-decoration:none}
+.cta a.btn:hover{background:var(--marker);color:#1A2140}
+.rel{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;margin:1rem 0}
+footer{padding:2rem 0 3rem;font-size:.95rem;opacity:.7}
+</style>
+<script>(function(){var t=null;try{t=localStorage.getItem('theme')}catch(e){}if(!t)t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';document.documentElement.setAttribute('data-theme',t)})();</script>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Main"><a href="/">Krish Ramjiyani</a><ul><li><a href="/">Home</a></li><li><a href="/qa-engineer/">QA Engineer</a></li><li><a href="/manual-testing/">Manual Testing</a></li><li><a href="/api-testing/">API Testing</a></li><li><a href="/playwright-automation/" aria-current="page">Playwright Automation</a></li></ul></nav>
+<main>
+<h1><mark>Playwright</mark> automation in JavaScript</h1>
+<p class="lead">I automate after I understand the product. Manual testing finds what matters, and Playwright makes the stable parts repeatable on every release.</p>
+<h2>How I approach automation</h2>
+<ul class="t">
+<li>Understand the feature by hand first, then automate once it is stable.</li>
+<li>Build reusable Playwright tests in JavaScript and widen coverage over time.</li>
+<li>Write one clear behavior per test, with readable names.</li>
+<li>Check what the user actually sees, not only what the code returns.</li>
+<li>Keep credentials out of the code by reading them from environment variables.</li>
+<li>Re-run the stable core after every release as part of regression.</li>
+</ul>
+<h2>A sample test</h2>
+<p>An illustrative check from a role-based access scenario: an agent must not be able to open the Super Admin area by typing the address directly.</p>
+<pre><code>import { test, expect } from '@playwright/test';
+
+test('agent cannot open the super admin area', async ({ page }) =&gt; {
+  // log in as an agent
+  await page.goto('/login');
+  await page.getByLabel('Email').fill(process.env.AGENT_EMAIL);
+  await page.getByLabel('Password').fill(process.env.AGENT_PASSWORD);
+  await page.getByRole('button', { name: 'Log in' }).click();
+
+  // try the restricted page directly
+  await page.goto('/admin/users');
+  await expect(page).not.toHaveURL(/admin\/users/);
+  await expect(page.getByText('Access denied')).toBeVisible();
+});</code></pre>
+<h2>What this test shows</h2>
+<p>It logs in the way a real agent would, using labels and button names rather than fragile selectors. It then tries the restricted address and asserts two things the user would notice: they are not on the admin page, and they see an access denied message. This is the automated version of scenario RBAC-02 from my <a href="/manual-testing/">manual test cases</a>.</p>
+<h2>Where automation fits in my work</h2>
+<p>In my Junior Quality Analyst role I build and maintain reusable Playwright automation and use it to widen coverage in regression cycles. Pair it with API checks in <a href="/api-testing/">Postman and JMeter</a> and the result is coverage from the interface down to the data.</p>
+<h2>Tools I use with it</h2>
+<p>JavaScript, JIRA for defects, GitHub, BrowserStack for browsers and devices, Postman and JMeter for the API and performance side.</p>
+<h2>More from my portfolio</h2>
+<div class="rel"><a href="/">Portfolio home</a><a href="/qa-engineer/">QA Engineer</a><a href="/manual-testing/">Manual Testing</a><a href="/api-testing/">API Testing</a></div>
+<div class="cta"><h2 style="margin-top:0">Have something that needs breaking?</h2>
+<p>I’m open to remote QA roles.</p>
+<a class="btn" href="mailto:krishramjiyani906@gmail.com">Email me</a><a class="btn" href="https://www.linkedin.com/in/krishramjiyani" rel="noopener">LinkedIn</a><a class="btn" href="/Krish_Ramjiyani_Resume.pdf" title="Krish Ramjiyani – QA Engineer resume (PDF)">Resume (PDF)</a></div>
+</main>
+<footer>© 2026 Krish Ramjiyani. Tested by the author.</footer>
+</div>
+</body>
+</html>
